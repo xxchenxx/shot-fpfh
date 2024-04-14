@@ -17,7 +17,7 @@ def add_io_parameters(parser) -> None:
     parser.add_argument(
         "--conf_file_path",
         type=str,
-        default="./data/bunny/bun.conf",
+        default='',
         help="Path to the .conf file used to count correct matches. Leave empty to ignore.",
     )
     parser.add_argument(
@@ -105,7 +105,7 @@ def add_descriptor_parameters(parser) -> None:
 def add_matching_parameters(parser) -> None:
     parser.add_argument(
         "--matching_algorithm",
-        choices=["simple", "double", "ransac"],
+        choices=["simple", "double", "threshold"],
         type=str,
         default="simple",
         help="Choice of the algorithm to match descriptors.",

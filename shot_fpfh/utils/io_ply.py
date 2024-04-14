@@ -266,6 +266,10 @@ def get_data(
     data = read_ply(data_path)
 
     points = np.vstack((data["x"], data["y"], data["z"])).T
+
+    random_indexes = np.random.choice(points.shape[0], 50000, replace=False)
+    points = points[random_indexes]
+
     if "nx" in data.dtype.fields.keys():
         normals = np.vstack((data["nx"], data["ny"], data["nz"])).T
         if recompute_normals:

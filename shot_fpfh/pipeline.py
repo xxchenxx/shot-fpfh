@@ -300,7 +300,7 @@ class RegistrationPipeline:
                 verbose=verbose,
                 force_recompute=force_recompute,
             )
-        elif descriptor_choice == "shot_multi_scale":
+        elif descriptor_choice == "shot_multiscale":
             self.compute_shot_descriptor_multiscale(
                 radii=radius * phi ** np.arange(n_scales),
                 voxel_sizes=radius * phi ** np.arange(n_scales) / rho,
